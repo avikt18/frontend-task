@@ -16,5 +16,8 @@ export const parseCSVData = (csvData) => {
 
 export const setDynamicTitle = (title) => {
   const TITLE_PLACEHOLDER = "Run you SQL queries on Insights";
+  if (!title) {
+    title = "Insights";
+  }
   document.title = `${title} | ${TITLE_PLACEHOLDER}`;
 };
