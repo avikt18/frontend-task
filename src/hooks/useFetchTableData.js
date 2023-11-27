@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import axios from "axios";
 import { parseCSVData } from "../utils";
 
@@ -24,7 +24,7 @@ const useFetchTableData = (tableName) => {
 
     // Check if data for this table is already cached.
     if (cache[tableName]) {
-      setData(cache[tableName]);
+      setData(cache[tableName].raw);
       return;
     }
 
@@ -33,10 +33,8 @@ const useFetchTableData = (tableName) => {
       const response = await axios.get(
         `https://raw.githubusercontent.com/graphql-compose/graphql-compose-examples/master/examples/northwind/data/csv/${tableName}.csv`
       );
-      const processedData = parseCSVData(response.data);
-      console.log(processedData);
-      cache[tableName] = processedData; // Cache the response data.
-      setData(processedData);
+      cache[tableName] = { raw: response.data }; // Cache the raw response data
+      setData(response.data);
     } catch (err) {
       setError(err);
     } finally {
@@ -48,7 +46,12 @@ const useFetchTableData = (tableName) => {
     fetchData();
   }, [fetchData]);
 
-  return { data, loading, error };
+  // Memoize processed data
+  const processedData = useMemo(() => {
+    return data ? parseCSVData(data) : null;
+  }, [data]);
+
+  return { data: processedData, loading, error };
 };
 
 export default useFetchTableData;
