@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import QueryPanel from "./components/QueryPanel";
+import Sidebar from "./components/Sidebar";
+import { setDynamicTitle } from "./utils";
 
 function App() {
+  const [activeTableName, setActiveTableName] = useState("");
+  const handleTableQuery = (tableName) => {
+    setActiveTableName(tableName);
+    setDynamicTitle(tableName)
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div className="flex h-full">
+        <Sidebar
+          handleTableQuery={handleTableQuery}
+          activeTableName={activeTableName}
+        />
+        <QueryPanel
+          query={activeTableName}
+          handleQueryChange={handleTableQuery}
+        />
+      </div>
     </div>
   );
 }
