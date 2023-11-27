@@ -1,5 +1,6 @@
 import React from "react";
 import tablesData from "../mockData/mockTableNames";
+import { CiViewTable } from "react-icons/ci";
 
 function Sidebar({ handleTableQuery, activeTableName }) {
   console.log(activeTableName);
@@ -11,13 +12,14 @@ function Sidebar({ handleTableQuery, activeTableName }) {
           {tablesData.map((tableName) => (
             <p
               onClick={() => handleTableQuery(tableName)}
-              className={`w-full rounded-md  cursor-pointer p-1 transition-colors ${
+              className={`w-full rounded-md  cursor-pointer p-1 transition-colors flex items-center gap-1 ${
                 activeTableName === tableName
                   ? "text-white bg-blue-500 hover:bg-blue-600"
                   : "hover:bg-slate-200"
               }`}
               key={tableName}
             >
+              <CiViewTable />
               {tableName}
             </p>
           ))}

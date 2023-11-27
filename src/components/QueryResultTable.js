@@ -1,8 +1,9 @@
 import React from "react";
 import { Table } from "antd";
 import useFetchTableData from "../hooks/useFetchTableData";
+import { CiViewTable } from "react-icons/ci";
 
-function QueryResultTable({query}) {
+function QueryResultTable({ query }) {
   const { data, loading, error } = useFetchTableData(query);
 
   let columns =
@@ -13,9 +14,12 @@ function QueryResultTable({query}) {
       dataIndex: key,
     }));
   return (
-    <div className="min-h-[50vh] min-w-full overflow-auto rounded-lg mb-16 flex-1 flex justify-center items-center absolute bottom-0 border-2">
+    <div className="min-h-[50vh] min-w-full overflow-auto rounded-lg mb-16 mt-4 flex-1 flex justify-center items-center absolute bottom-0 border-t-2">
       {!error && !loading && !data && (
-        <span className="text-2xl opacity-40">Nothing to show here</span>
+        <span className="text-2xl opacity-40 flex flex-col items-center">
+          <CiViewTable size={45} />
+          Nothing to show here
+        </span>
       )}
       {error && "Error fetching query data"}
       {loading && "loading..."}
