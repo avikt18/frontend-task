@@ -1,14 +1,14 @@
 import { useState } from "react";
-import Navbar from "./components/Navbar";
-import QueryPanel from "./components/QueryPanel";
-import Sidebar from "./components/Sidebar";
+import Navbar from "./components/navigation/Navbar";
+import QueryPanel from "./components/query/QueryPanel";
+import Sidebar from "./components/navigation/Sidebar";
 import { setDynamicTitle } from "./utils";
 
 function App() {
   const [activeTableName, setActiveTableName] = useState("");
   const handleTableQuery = (tableName) => {
     setActiveTableName(tableName);
-    setDynamicTitle(tableName)
+    setDynamicTitle(tableName);
   };
   return (
     <div className="App">

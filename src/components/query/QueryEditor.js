@@ -1,4 +1,4 @@
-import tableQueries from "../mockData/mockTableQueries";
+import tableQueries from "../../mockData/mockTableQueries";
 import { UnControlled as CodeMirror } from "react-codemirror2";
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/material.css";

@@ -1,5 +1,5 @@
 import React from "react";
-import tablesData from "../mockData/mockTableNames";
+import tablesData from "../../mockData/mockTableNames";
 import { CiViewTable } from "react-icons/ci";
 
 function Sidebar({ handleTableQuery, activeTableName }) {
