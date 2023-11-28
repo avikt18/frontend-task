@@ -51,7 +51,7 @@ const useFetchTableData = (tableName) => {
     } finally {
       setLoading(false);
     }
-  }, [tableName]);
+  }, [tableName]);  // eslint-disable-line
 
   useEffect(() => {
     fetchData();
