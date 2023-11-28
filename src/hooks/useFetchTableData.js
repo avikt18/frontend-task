@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef, useMemo } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import axios from "axios";
 import { parseCSVData } from "../utils";
 
@@ -8,7 +8,7 @@ const useFetchTableData = (tableName) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [timeToFetch, setTimeToFetch] = useState(null);
-  const cache = useRef({}).current;
+  const cache = useRef({}).current;     // Using an object to cache the responses.
 
   const fetchData = useCallback(async () => {
     if (!tableName) {
@@ -19,11 +19,7 @@ const useFetchTableData = (tableName) => {
       return;
     }
 
-    setData(null);
-    setError(null);
-    setTimeToFetch(null);
-    setDataLength(0);
-
+     // Check if data for this table is already cached.
     if (cache[tableName]) {
       setData(cache[tableName].data.data);
       setTimeToFetch(cache[tableName].timeToFetch);
@@ -42,6 +38,7 @@ const useFetchTableData = (tableName) => {
       fetchTime = (fetchTime/1000).toFixed(2)   //convert to seconds rounded off to 2 decimal places
       const processedData = parseCSVData(response.data);
       const length = processedData.length;
+      // Cache the raw response data
       cache[tableName] = {
         data: { data: processedData, dataRows: length },
         timeToFetch: fetchTime,

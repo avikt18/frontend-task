@@ -39,7 +39,7 @@ function QueryResultTable({ query }) {
       <div className="h-[60vh] min-w-full overflow-auto rounded-lg mb-16 mt-4 flex-1 flex justify-center absolute bottom-0 border-t-2">
         <div className="h-full w-full text-2xl opacity-40 flex flex-col items-center justify-center">
           <CiViewTable size={45} />
-          "Nothing to show here"
+          Nothing to show here
         </div>
       </div>
     );
