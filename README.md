@@ -6,8 +6,17 @@ This is a web-based SQL query runner demo application built using `react`, along
 The mock data used in the application is obtained from [graphql-compose-examples](https://github.com/graphql-compose/graphql-compose-examples/tree/master/examples/northwind/data/csv) repo.
 
 ## Performance Audit
+### 1.Lighthouse report
+**FCP - 0.9s** </br>
+**LCP - 1.9s** </br>
+
 Below is the screenshot of the lighthouse report of the webapp
 ![image](https://github.com/avikt18/frontend-task/assets/56340999/59ecdc44-301e-48f4-ae4a-de747a3eca1b)
+
+### 2. GTmetrics
+**LCP - 0.59s** </br>
+The GTmetrics report can be found [here](https://gtmetrix.com/reports/sql-query-insights.netlify.app/krVjU40s/). Below is the screenshot for the same:
+![image](https://github.com/avikt18/frontend-task/assets/56340999/dcdd2cd9-911e-49c9-ac7f-eb27c4bee40b)
 
 ## Optimisations
 Several optimizations have been done in this React project which are:
@@ -22,7 +31,7 @@ Several optimizations have been done in this React project which are:
 
 5. **On-Demand Data Fetching**: Enhanced resource efficiency by fetching data only when required, minimizing unnecessary network usage and server processing.
 
-## Screenshots
+## App Screenshots
 ![image](https://github.com/avikt18/frontend-task/assets/56340999/155fb5cc-a41f-472d-b540-a90d3dba273a)
 
 ![image](https://github.com/avikt18/frontend-task/assets/56340999/aacc2ac6-3e8b-4418-a1aa-dcebecd23818)
