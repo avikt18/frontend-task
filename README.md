@@ -33,6 +33,7 @@ Several optimizations have been done in this React project which are:
 5. **On-Demand Data Fetching**: The data is only fetched from the API when requested by the user, thus decreasing the initial load times of the app and saving unnecessary API calls.
 
 ## App Screenshots
-![image](https://github.com/avikt18/frontend-task/assets/56340999/155fb5cc-a41f-472d-b540-a90d3dba273a)
+![image](https://github.com/avikt18/frontend-task/assets/56340999/03f4c6fd-6e43-4cbe-825e-3898f700e75e)
 
-![image](https://github.com/avikt18/frontend-task/assets/56340999/aacc2ac6-3e8b-4418-a1aa-dcebecd23818)
+![image](https://github.com/avikt18/frontend-task/assets/56340999/847705dd-1448-46a2-becc-3cb9c2dacfb3)
+
