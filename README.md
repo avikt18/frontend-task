@@ -15,6 +15,7 @@ Below is the screenshot of the lighthouse report of the webapp
 
 ### 2. GTmetrics
 **LCP - 0.59s** </br>
+**Full Load Time - 0.81s** </br>
 The GTmetrics report can be found [here](https://gtmetrix.com/reports/sql-query-insights.netlify.app/krVjU40s/). Below is the screenshot for the same:
 ![image](https://github.com/avikt18/frontend-task/assets/56340999/dcdd2cd9-911e-49c9-ac7f-eb27c4bee40b)
 
@@ -29,7 +30,7 @@ Several optimizations have been done in this React project which are:
 
 4. **Dynamically Imported `antd's Table` Component with React Lazy**: Improved initial page load speed by loading the `Table` component from antd only when needed, effectively reducing the initial JavaScript bundle size.
 
-5. **On-Demand Data Fetching**: Enhanced resource efficiency by fetching data only when required, minimizing unnecessary network usage and server processing.
+5. **On-Demand Data Fetching**: The data is only fetched from the API when requested by the user, thus decreasing the initial load times of the app and saving unnecessary API calls.
 
 ## App Screenshots
 ![image](https://github.com/avikt18/frontend-task/assets/56340999/155fb5cc-a41f-472d-b540-a90d3dba273a)
